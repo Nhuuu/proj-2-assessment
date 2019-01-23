@@ -1,0 +1,19 @@
+<h1>FAVORITES</h1>
+<hr>
+<div class="faves">
+	<% animals.forEach((a) => { %>
+		<div>
+			<img class="image" src="<%= a.image_url %>">
+			<div>
+				<h3><%= a.species_name.toUpperCase() %></h3>
+				<p><em>Scientific Name: <%= a.scientific_name %></em></p>
+				<p><%= a.description %></p>
+				<% if (a.extinct) { %>
+					<p class="extinct-true"><%= a.extinct %></p>
+				<% } else if (!a.extinct) { %>
+					<p><%= a.extinct %></p>
+				<% } %>		
+			</div>
+		</div>
+	<% }); %>
+</div>
